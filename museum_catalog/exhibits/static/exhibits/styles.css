@@ -1,0 +1,174 @@
+/* styles.css */
+
+/* Сброс стилей */
+* {
+    box-sizing: border-box; /* Учитываем padding и margin */
+    margin: 0;
+    padding: 0;
+}
+
+/* Общие стили для body */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F5F5F5; /* Светлая тема */
+    color: #333; /* Цвет текста */
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px; /* Отступ для красоты */
+}
+
+body.dark-mode {
+    background-color: #121212; /* Темная тема */
+    color: #E0E0E0; /* Светлый текст */
+}
+
+/* Заголовки */
+h1 {
+    color: #6200EA; /* Фиолетовый */
+    margin: 20px 0;
+}
+
+/* Стили для ссылок */
+a {
+    text-decoration: none;
+    color: #03DAC5; /* Бирюзовый */
+}
+
+a.button, button {
+    background-color: #6200EA; /* Основной цвет */
+    color: #FFFFFF;
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: none; /* Убираем стандартный бордер */
+    transition: background-color 0.3s, transform 0.2s;
+    cursor: pointer; /* Указатель на кнопке */
+}
+
+/* Эффекты при наведении */
+a.button:hover,
+button:hover {
+    background-color: #3700B3; /* Темный цвет для ховера */
+    transform: translateY(-2px); /* Подъем кнопки при наведении */
+}
+
+/* Стиль для форм */
+form {
+    /* width: 90%;
+    max-width: 400px;
+    background: #FFFFFF; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+    margin: 20px 0;
+}
+form button {
+    display: block;
+    margin: 10px auto;
+}
+
+/* Инпуты */
+input[type="text"], input[type="password"], input[type="email"] {
+    width: 100%; /* Полная ширина */
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid #6200EA; /* Основной цвет на фокусе */
+}
+
+/* Темный переключатель */
+.toggle-container {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.toggle-label {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Отступ между переключателем и текстом */
+}
+
+.toggle-label input[type="checkbox"] {
+    display: none; /* Скрываем стандартный чекбокс */
+}
+
+.toggle-label .slider {
+    width: 34px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 34px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toggle-label .slider::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+/* Состояние включенного переключателя */
+.toggle-label input[type="checkbox"]:checked + .slider {
+    background-color: #6200EA;
+}
+.toggle-label input[type="checkbox"]:checked + .slider::before {
+    transform: translateX(14px);
+}
+
+/* Список экспонатов */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    width: 90%;
+    max-width: 720px; /* Установим максимальную ширину для списка */
+}
+
+li {
+    background: #FFFFFF; /* Фон списка */
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    display: flex; /* Используем Flexbox */
+    justify-content: space-between; /* Разделяем элементы по краям */
+    align-items: center; /* Центрируем по вертикали */
+}
+
+.exhibit-info {
+    flex-grow: 1; /* Позволяем тексту занимать все доступное пространство */
+    margin-right: 10px; /* Отступ между текстом и кнопками */
+    overflow: hidden; /* Прячем переполненный текст */
+    /* white-space: nowrap; 
+    text-overflow: ellipsis;  */
+}
+
+.exhibit-actions {
+    display: flex; /* Используем Flexbox для кнопок */
+    gap: 5px; /* Отступ между кнопками */
+}
+
+body.dark-mode li {
+    background: #1E1E1E; /* Темный фон для элементов списка */
+    color: #E0E0E0; /* Светлый текст */
+}
+
+li:hover {
+    transform: translateY(-2px);
+}
